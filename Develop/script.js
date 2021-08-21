@@ -23,6 +23,25 @@ var generatePassword = function() {
   return newPass;
   
 }
+//Password Length Requirement
+
+var passLengthCheck = function() {
+  var passLength = prompt("How many characters must your password be? Please choose a number between 8 and 128.");
+
+ passLength= +passLength;
+
+  if (passLength < 8 || passLength >128 || isNaN(passLength)) {
+    passLengthCheck();
+  }else {
+    lowerCaseCheck();
+  }
+  for(var i=0; i < passLength; i++) {
+    var pass = Math.floor(Math.random()*result.length);
+    var passVal = result[pass];
+    newPass += passVal;
+  }
+  console.log(newPass)
+};
 
 //include lowerCase 
 var lowerCaseCheck =function() {
