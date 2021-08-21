@@ -35,5 +35,36 @@ var lowerCaseCheck =function() {
   
 };
 
+//include uppercase
+var upperCaseCheck =function() {
+  var upperCase = confirm("Does your password need Upper Case characters? Select 'OK' for Yes or 'CANCEL' for No.");
+
+  if(upperCase) {
+    result = result.concat(uC);
+    numCheck();
+  };
+  
+  
+};
+//include numbers
+var numCheck =function() {
+  var number = confirm("Does your password need Numbers? Select 'OK' for Yes or 'CANCEL' for No. ");
+
+  if(number) {
+    result = result.concat(num);
+    specialCharChck();
+  };
+  
+};
+//include special characters
+
+var specialCharChck =function() {
+  var specialChar = confirm("Does your password need special characters? Select 'OK' for Yes or 'CANCEL' for No.");
+
+  if(specialChar) {
+    result = result.concat(sym);
+  };
+  
+};
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
